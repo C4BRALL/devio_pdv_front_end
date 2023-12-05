@@ -13,15 +13,21 @@ interface CreateModalProps {
   "currency": string,
 }
 
-interface InputProps {
-  label: string,
-  value: string | number,
-  updateValue(value: unknown): void,
+export function setLocalStorage(key: string, value: unknown) {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 export function CreateModal({ id, name, price, image, description, currency }: CreateModalProps) {
   const [ comments, setComments ] = useState("")
   const [count, setCount] = useState(1);
+
+  const handleSubmit = () => {
+    setLocalStorage('myKey', comments);
+  }
 
   const { data } = useAdditionalData(id)
   const increment = () => setCount(count + 1);
@@ -111,6 +117,9 @@ export function CreateModal({ id, name, price, image, description, currency }: C
               setComments(event.target.value);
             }}
           />
+        </Box>
+        <Box>
+          <Button variant="contained" onClick={handleSubmit}>submit test</Button>
         </Box>
       </div>
     </Box>
