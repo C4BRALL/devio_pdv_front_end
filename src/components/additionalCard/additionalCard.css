@@ -1,0 +1,23 @@
+.additional-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  width: 55vw;
+}
+
+.additional-info {
+  padding: 0px;
+  margin: 0px;
+}
+
+.additional-image img{
+  width: 7vw;
+  height: 7vw;
+  object-fit: contain;
+}
+
+.additional-price {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
