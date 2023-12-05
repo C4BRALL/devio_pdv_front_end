@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 120px
+}
+
+.title {
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: 11%;
+  margin-bottom: 3vw;
+  
+}
